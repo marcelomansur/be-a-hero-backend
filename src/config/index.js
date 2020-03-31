@@ -4,7 +4,7 @@ dotenv.config({ path: "src/config/.env" });
 
 module.exports = {
   port: process.env.PORT || 3333,
-  dbtype: process.env.DB_TYPE,
+  dbclient: process.env.DB_CLIENT,
   dbhost: process.env.DB_HOST,
   dbname: process.env.DB_NAME,
   dbport: process.env.DB_PORT,
