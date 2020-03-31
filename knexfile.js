@@ -25,10 +25,11 @@ module.exports = {
   },
 
   staging: {
-    client: "postgresql",
+    client: config.dbclient,
     connection: {
       host: config.dbhost,
       database: config.dbname,
+      port: config.dbport,
       user: config.dbuser,
       password: config.dbpass
     },
@@ -37,14 +38,17 @@ module.exports = {
       max: 10
     },
     migrations: {
+      directory: "./src/database/migrations",
       tableName: "knex_migrations"
     }
   },
 
   production: {
+    client: config.dbclient,
     connection: {
       host: config.dbhost,
       database: config.dbname,
+      port: config.dbport,
       user: config.dbuser,
       password: config.dbpass
     },
@@ -53,6 +57,7 @@ module.exports = {
       max: 10
     },
     migrations: {
+      directory: "./src/database/migrations",
       tableName: "knex_migrations"
     }
   }
